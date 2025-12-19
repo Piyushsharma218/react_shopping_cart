@@ -7,7 +7,7 @@ const ProductCard = ({ product }) => {
     <>
       <div className="bg-gray-900 rounded-2xl shadow-xl overflow-hidden flex flex-col h-full transition duration-500 transform border border-gray-800 group hover:scale-[1.03] hover:shadow-orange-900/40">
         <Link
-          to={"/product"}
+          to={`/product/${product.id}`}
           className=" relative cursor-pointer overflow-hidden"
         >
           <img
@@ -22,7 +22,7 @@ const ProductCard = ({ product }) => {
         </Link>
 
         <div className="p-5 flex flex-col grow">
-          <Link to={`/product`}>
+          <Link to={`/product/${product.id}`}>
             <h3 className="text-2xl font-extrabold text-white mb-2 cursor-pointer hover:text-orange-400 transition duration-200 line-clamp-1">
               {product.name}
             </h3>
