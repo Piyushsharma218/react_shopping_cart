@@ -2,7 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { IndianRupee } from "lucide-react";
 import { ShoppingCart } from "lucide-react";
+import { useCart } from "../context/CartContext";
 const ProductCard = ({ product }) => {
+  const { addToCart } = useCart();
   return (
     <>
       <div className="bg-gray-900 rounded-2xl shadow-xl overflow-hidden flex flex-col h-full transition duration-500 transform border border-gray-800 group hover:scale-[1.03] hover:shadow-orange-900/40">
@@ -37,6 +39,7 @@ const ProductCard = ({ product }) => {
             </span>
           </div>
           <button
+          onClick={()=>addToCart(product)}
             className="max-auto w-full py-3 bg-orange-600 text-white font-bold rounded-full shadow-lg shadow-orange-800/50 cursor-pointer hover:bg-orange-700 transition duration-300 flex items-center justify-center space-x-2 transform hover:ring-4 hover:ring-pink-600/50 uppercase tracking-wider"
           >
             <ShoppingCart className="w-5 h-5" />

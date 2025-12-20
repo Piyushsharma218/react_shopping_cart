@@ -2,8 +2,10 @@ import React from "react";
 import { House } from "lucide-react";
 import { ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
 const Navbar = () => {
+  const {cartCount}=useCart()
   return (
     <>
       <header className="sticky top-0 bg-gray-950/95 backdrop-blur-md text-white shadow-2xl  border-b border-orange-900">
@@ -23,6 +25,7 @@ const Navbar = () => {
               className=" relative p-3 bg-orange-500/10 rounded-xl text-orange-400 hover:bg-orange-500/20 transit:duration-200 border border-orange-400/50shadow-lg cursor-pointer"
             >
               <ShoppingCart />
+              {cartCount > 0 && <span className="absolute top-0 right-0 inline-flex items-center justify-center text-xs font-bold leading-none text-white  translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full min-w-[24px] h-[20px]">{cartCount}</span>}
             </Link>
           </nav>
         </div>

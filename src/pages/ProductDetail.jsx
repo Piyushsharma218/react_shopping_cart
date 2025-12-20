@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { initialProducts } from "../data/product";
-
+import { useCart } from "../context/CartContext";
 import { Link, useParams } from "react-router-dom";
 import { ChevronLeft, ShoppingCart, Tag, Zap } from "lucide-react";
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const { addToCart } = useCart();
 
   const [product, setproduct] = useState();
   useEffect(() => {
@@ -32,7 +33,7 @@ const ProductDetail = () => {
           </div>
           <div>
             <div>
-              <h1 className="text-4xl font-extrabold text-white mb-4 leading-tight tracking-tighter">
+              <h1 className="text-4xl font-extrabold text-white mb-4  ">
                 {product?.name}
               </h1>
             </div>
