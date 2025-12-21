@@ -37,6 +37,17 @@ export const CartProvider = (props) => {
   };
 
   const removeFromCart = (productId, removeAll = false) => {
+    toast.success("Item is removed from cart", {
+      position: "top-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce,
+    });
     setCart((prevCart) => {
       const existingItem = prevCart.find((item) => item.id === productId);
 
