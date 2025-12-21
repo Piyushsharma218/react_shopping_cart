@@ -4,12 +4,12 @@ import { initialProducts } from "../data/product";
 import { Tag } from "lucide-react";
 
 const availablecategories = [
-  "all",
+  "All",
   ...new Set(initialProducts.map((p) => p.category)),
 ];
 
-const CategoryFilter = () => {
-  const selected = "Phone";
+const CategoryFilter = ({selectedCategory, setSelectedCategory}) => {
+  
   return (
     <>
       <div className="flex gap-3 border-b border-gray-800 pb-6 ">
@@ -18,8 +18,9 @@ const CategoryFilter = () => {
         {availablecategories.map((category) => (
           <button
             key={category}
+            onClick={()=>setSelectedCategory(category)}
             className={`px-5 py-2 text-sm font-bold rounded-full  ${
-              selected === category
+              selectedCategory === category
                 ? "bg-orange-600 text-white "
                 : "bg-gray-800 text-gray-300 hover:bg-gray-700"
             }`}
