@@ -1,7 +1,7 @@
 import React from "react";
 import { Search } from "lucide-react";
 
-const SearchFilter = () => {
+const SearchFilter = ({searchTerm, setSearchTerm}) => {
   return (
     <>
       <div className="mb-5 p-5 bg-gray-900 rounded-2xl shadow-xl border border-gray-800">
@@ -11,6 +11,8 @@ const SearchFilter = () => {
             className="w-full p-4 outline-none bg-gray-800 placeholder-gray-500 text-base font-medium"
             type="text"
             placeholder="Search high-performance product by name or feature "
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
       </div>

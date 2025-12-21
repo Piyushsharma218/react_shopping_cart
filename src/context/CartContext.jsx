@@ -5,6 +5,7 @@ const cartContext = createContext();
 
 export const CartProvider = (props) => {
   const [cart, setCart] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const products = initialProducts;
 
@@ -65,6 +66,8 @@ export const CartProvider = (props) => {
         removeFromCart,
         cartTotal,
         cartCount,
+        searchTerm,
+        setSearchTerm,
       }}
     >
       {props.children}
