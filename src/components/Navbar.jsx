@@ -8,7 +8,7 @@ const Navbar = () => {
   const {cartCount}=useCart()
   return (
     <>
-      <header className="sticky top-0 bg-gray-950/95 backdrop-blur-md text-white shadow-2xl  border-b border-orange-900">
+      <header className="sticky top-0 z-50 bg-gray-950/95 backdrop-blur-md text-white shadow-2xl  border-b border-orange-900">
         <div className="container mx-auto p-4 flex justify-between items-center">
           <Link to={"/"}>
             <div className="flex items-center space-x-3 crusor-pointer">
